@@ -1,0 +1,63 @@
+@import 'bootstrap/less/bootstrap.less';
+@import 'font-awesome/less/font-awesome.less';
+
+@icon-font-path: '/bower_components/bootstrap/fonts/';
+@fa-font-path: '/bower_components/font-awesome/fonts';
+
+/**
+ * App-wide Styles
+ */
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+.jumbotron {
+  position: relative;
+
+  .question-item {
+    min-height: 60px;
+    p {
+      font-size: 17px;
+    }
+
+    h4 {
+      font-weight: bold;
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+  .options-wrapper {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+
+    a {
+      margin: 0 3px;
+
+      .hide-content {
+        vertical-align: bottom;
+      }
+
+    }
+  }
+}
+@media (max-width: 1200px){
+  .full-screen{
+    display: none;
+  }
+}
+
+
+// injector
+@import 'angular/angular.less';
+@import 'main/main.less';
+@import 'newQuestion/newQuestion.less';
+@import 'vanilaJS/vanilaJS.less';
+@import 'modal/modal.less';
+// endinjector

@@ -1,0 +1,18 @@
+<h3 class="text-center">{{topic}} questions</h3>
+<hr/>
+<div class="row">
+    <div class="col-md-6 ">
+        <input type="text" class="form-control" placeholder="Search items" ng-model="search"/>
+    </div>
+    <div class="col-md-6 ">
+        <button class="btn btn-primary" ng-click="collapseAll()">{{ (isCollapsedAll)? "Expand" : "Collapse"}} All
+        </button>
+    </div>
+</div>
+<hr/>
+
+<div class="row">
+    <div class="col-lg-6" ng-repeat="question in questions  | filter: {question: search}">
+        <question-wrapper question="question" collapsed="{{isCollapsedAll}}"></question-wrapper>
+    </div>
+</div>

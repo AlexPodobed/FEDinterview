@@ -1,0 +1,31 @@
+<div class="jumbotron">
+    <div class="options-wrapper">
+        <a href="" ng-click="toggle()">
+            <span class="hide-content glyphicon glyphicon-minus"></span>
+        </a>
+        <a href="" class="full-screen" ng-click="openInOneRow()">
+            <span class="glyphicon glyphicon-unchecked"></span>
+        </a>
+        <a ui-sref="newQuestion({questionID:question._id})">
+            <span class="glyphicon glyphicon-pencil"></span>
+        </a>
+        <a class="remove-question" href="">
+            <span class="glyphicon glyphicon-remove"> </span>
+        </a>
+    </div>
+    <div class="container question-item">
+        <h4>{{index+1}}. {{question.question}}</h4>
+
+        <div class="content" ng-hide="isCollapsed">
+            <section class="answer" ng-bind-html="question.answer"></section>
+            <section class="image text-center" ng-if="question.img">
+                <img src="{{question.img}}" alt=""/>
+            </section>
+            <section class="code" ng-if="question.code">
+
+                <gist id="{{question.code}}"></gist>
+            </section>
+        </div>
+
+    </div>
+</div>

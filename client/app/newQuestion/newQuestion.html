@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="col-md-12">
+    <p ng-if="hasPrevState"><a href="" ng-click="goBack()">Go back</a></p>
+    <h3> {{ (editState) ? "Edit" : "Create" }}  New Question</h3>
+    <hr/>
+    <form name="newQuestionForm">
+
+      <div class="form-group">
+        <label for="questionName">Question Name:</label>
+        <input id="questionName" type="text"
+               class="form-control"
+               placeholder="Enter question name"
+               ng-model="question.question"
+              required=""/>
+      </div>
+
+      <div class="form-group">
+        <label for="questionTopic">Question Topic:</label>
+        <select class="form-control" name="" id="questionTopic" ng-model="question.topic" required="">
+          <option value="angular">Angular</option>
+          <option value="vanillajs">VanillaJS</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Answer:</label>
+        <div class="mail-preview" text-angular ng-model="question.answer" required=""></div>
+      </div>
+
+      <div class="form-group">
+        <label for="code">Code:</label>
+        <input id="code" type="text" class="form-control"
+               placeholder="Enter gist link"
+               ng-model="question.code"/>
+      </div>
+
+      <div class="form-group">
+        <label for="imageLink">Image link:</label>
+        <input id="imageLink" type="text" class="form-control"
+               placeholder="Enter image link"
+               ng-model="question.img"/>
+      </div>
+
+      <div class="form-group">
+        <button class="btn btn-primary" ng-disabled="newQuestionForm.$invalid" ng-click="save()" ng-if="!editState">Save</button>
+        <button class="btn btn-success" ng-disabled="newQuestionForm.$invalid" ng-click="update()" ng-if="editState">Update</button>
+        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+      </div>
+
+    </form>
+  </div>
+
+</div>
+<div class="row">
+  <div class="col-md-12">
+{{question.answer}}
+
+  </div>
+</div>
